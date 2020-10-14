@@ -9,5 +9,6 @@ A command line tool that, given a single URL, can download the web object pointe
 $ python3 downloader.py -n num_chunks -o output_dir -f file_name -u object_url
 ```
 
-
-
+### Questions:
+- Displaying wrong content length 
+- Cant decompress gzipped response when n > 1
