@@ -19,7 +19,10 @@ def download_chunk(url, start, end, part, fname, output_dir):
     filename = fname + '.chunk_%d' % part
     filepath = os.path.join(output_dir, filename)
     with open(filepath, 'wb') as f:
-        f.write(r.content)
+        #f.write(r.content)
+        for chunk in r.iter_content(chunk_size=1024):
+            if chunk:
+                f.write(chunk)
     print('Downloaded %s' % filepath)
 
 
