@@ -18,11 +18,14 @@ port = 80
 def download_chunk(url, host, start, end, part, fname, output_dir):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.connect((host, port))
-    range = 'Range{'+str(start) + ':' + str(end) + '}'
-    request = 'GET ' + url + ' ' + range
-    socket.send(request.encode())
+    byterange = str(start) + '-' + str(end)
+    request = 'GET / HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (host,byterange)
+    
+    #print(request)
+    
+    sock.send(request.encode())
     response = sock.recv(4096)
-
+    
     filename = fname + '.chunk_%d' % part
     filepath = os.path.join(output_dir, filename)
     with open(filepath, 'wb') as f:
@@ -59,21 +62,29 @@ def main():
 
     # TCP Connection for HEAD request --> Determine size
     csock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    csock.connect((host, port))
-    request = 'HEAD '+url
-    socket.send(request.encode())
+    csock.connect((host, 80))
+    request = 'HEAD / HTTP/1.1\r\nHost:%s\r\n\r\n' % host
+    csock.send(request.encode())
     response = csock.recv(4096)
+    csock.close()
 
-    print(response)
+    print(response.decode())
+    response = response.decode()
 
-    accepts_ranges = True;
+    # check if accepts ranges
+    try:
+        response.index('Accept-Ranges: bytes')
+        accepts_ranges=True
+    except:
+        print('The URL does not accept byte ranges')
+        accepts_ranges = False
 
     # Ensure url provided accepts ranges
     if not accepts_ranges:
-        print('The given url does not accept byte ranges for downloading.')
+        return
     else:
-
-        content_length = int(response.headers['content-length'])
+        index_of_cl = response.index('Content-Length')
+        content_length = int(response[response.index('Content-Length')+16:response.index('\n',index_of_cl)])
 
         print('content-length: ', content_length)
         # compute chunk size and remainder of last chunk downloaded
