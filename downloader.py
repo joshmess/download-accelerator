@@ -8,24 +8,24 @@ import sys, os
 import time
 import socket
 
-
 # Author: Josh Messitte (811976008)
 # CSCI 6760 Project 3: download-accelerator
 # Test downloader: python3 downloader.py -n num_chunks -o output_dir -f file_name -u object_url
 
 port = 80
 
-def download_chunk(url, host, start, end, part, fname, output_dir):
+
+def download_chunk(path, host, start, end, part, fname, output_dir):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.connect((host, port))
     byterange = str(start) + '-' + str(end)
-    request = 'GET / HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (host,byterange)
-    
-    #print(request)
-    
+    request = 'GET %s HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (path, host, byterange)
+
+    print(request)
+
     sock.send(request.encode())
     response = sock.recv(4096)
-    
+
     filename = fname + '.chunk_%d' % part
     filepath = os.path.join(output_dir, filename)
     with open(filepath, 'wb') as f:
@@ -63,7 +63,7 @@ def main():
     # TCP Connection for HEAD request --> Determine size
     csock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     csock.connect((host, 80))
-    request = 'HEAD / HTTP/1.1\r\nHost:%s\r\n\r\n' % host
+    request = 'HEAD %s HTTP/1.1\r\nHost:%s\r\n\r\n' % (path, host)
     csock.send(request.encode())
     response = csock.recv(4096)
     csock.close()
@@ -74,7 +74,7 @@ def main():
     # check if accepts ranges
     try:
         response.index('Accept-Ranges: bytes')
-        accepts_ranges=True
+        accepts_ranges = True
     except:
         print('The URL does not accept byte ranges')
         accepts_ranges = False
@@ -84,7 +84,7 @@ def main():
         return
     else:
         index_of_cl = response.index('Content-Length')
-        content_length = int(response[response.index('Content-Length')+16:response.index('\n',index_of_cl)])
+        content_length = int(response[response.index('Content-Length') + 16:response.index('\n', index_of_cl)])
 
         print('content-length: ', content_length)
         # compute chunk size and remainder of last chunk downloaded
@@ -103,7 +103,7 @@ def main():
                 end = start + chunk_size + chunk_remainder
 
             print('Part ', part, ' Start is: ', start, ' end is ', end)
-            t = threading.Thread(target=download_chunk, args=(url, host, start, end, part, file_name, output_dir))
+            t = threading.Thread(target=download_chunk, args=(path, host, start, end, part, file_name, output_dir))
             t.setDaemon(True)
             t.start()
 
