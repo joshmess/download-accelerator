@@ -11,4 +11,4 @@ $ python3 downloader.py -n num_chunks -o output_dir -f file_name -u object_url
 
 ### Questions:
 - Almost every URL yielding a 301 Moved Permanently Message
-- Work on GET request with range over TCP--> specify entire url?
+
