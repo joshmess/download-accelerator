@@ -3,23 +3,30 @@ import hashlib
 import argparse
 import shutil
 import threading
-import urllib.request
-import requests
+import urllib.parse
 import sys, os
 import time
+import socket
 
 
 # Author: Josh Messitte (811976008)
 # CSCI 6760 Project 3: download-accelerator
 # Test downloader: python3 downloader.py -n num_chunks -o output_dir -f file_name -u object_url
 
+port = 80
 
-def download_chunk(url, start, end, part, fname, output_dir):
-    r = requests.get(url, headers={'Range': 'bytes=%d-%d' % (start, end)}, stream=True)
+def download_chunk(url, host, start, end, part, fname, output_dir):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.connect((host, port))
+    range = 'Range{'+str(start) + ':' + str(end) + '}'
+    request = 'GET ' + url + ' ' + range
+    socket.send(request.encode())
+    response = sock.recv(4096)
+
     filename = fname + '.chunk_%d' % part
     filepath = os.path.join(output_dir, filename)
     with open(filepath, 'wb') as f:
-        f.write(r.content)
+        f.write(response)
     print('Downloaded %s' % filepath)
 
 
@@ -43,23 +50,30 @@ def main():
     file_name = args.file_name
     url = args.object_url
 
+    parse_resp = urllib.parse.urlparse(url)
+    host = parse_resp[1]
+    path = parse_resp[2]
+
     # create output directory
     os.mkdir(output_dir)
 
-    # perform a head request --> check content size and check if url accepts ranges
-    r = requests.head(url)
-    accepts_ranges = 'accept-ranges' in r.headers and 'bytes' in r.headers['accept-ranges']
+    # TCP Connection for HEAD request --> Determine size
+    csock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    csock.connect((host, port))
+    request = 'HEAD '+url
+    socket.send(request.encode())
+    response = csock.recv(4096)
+
+    print(response)
+
+    accepts_ranges = True;
 
     # Ensure url provided accepts ranges
     if not accepts_ranges:
         print('The given url does not accept byte ranges for downloading.')
     else:
-        # url accepts byte ranges
-        try:
-            content_length = int(r.headers['content-length'])
-        except:
-            print('Invalid URL')
-            return
+
+        content_length = int(response.headers['content-length'])
 
         print('content-length: ', content_length)
         # compute chunk size and remainder of last chunk downloaded
@@ -78,7 +92,7 @@ def main():
                 end = start + chunk_size + chunk_remainder
 
             print('Part ', part, ' Start is: ', start, ' end is ', end)
-            t = threading.Thread(target=download_chunk, args=(url, start, end, part, file_name, output_dir))
+            t = threading.Thread(target=download_chunk, args=(url, host, start, end, part, file_name, output_dir))
             t.setDaemon(True)
             t.start()
 
