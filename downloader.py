@@ -22,12 +22,13 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     byterange = str(start) + '-' + str(end)
     request = 'GET %s HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (path, host, byterange)
    
-    print('Get Request: ')
+    print('GET Request: ')
     print(request)
 
     sock.send(request.encode())
-    response = sock.recv(4096)
-
+    response = sock.recv(end-start)
+    #print('GET Response')
+    #print(response.decode())
     # write file chunk to directory
     filename = fname + '.chunk_%d' % part
     filepath = os.path.join(output_dir, filename)
@@ -72,10 +73,8 @@ def main():
     csock.send(request.encode())
     response = csock.recv(4096)
     print('HEAD Response: ')
-    print(response)
-    csock.close()
-
     print(response.decode())
+    csock.close()
     response = response.decode()
 
     # check if accepts ranges
@@ -130,7 +129,7 @@ def main():
         print('Joining complete. File saved in %s' % filepath)
         newfile = open(filepath, 'rb')
         dat = newfile.read()
-        print('SHA256 Hash: ', hashlib.sha256(dat).hexdigest())
+        print('md5 Hash: ', hashlib.md5(dat).hexdigest())
 
 
 if __name__ == '__main__':

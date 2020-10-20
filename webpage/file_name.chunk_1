@@ -1,998 +1,181 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
-  <head>
-<!--
-GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGggggg  gggggGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGGGGGGGGGGGGGggg gGGGGGGGGGGg gggGGGGGGGGGGGGGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGGGGGGGGGGg  gggGGGGGGGGGGGGGGggg  gGGGGGGGGGGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGGGGGGgg  ggGGGGGGGGGGGGGGGGGGGGGGgg  ggGGGGGGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGGGGg  ggGGGGGGGGGGGGGGGGGGGGGGGGGGGGgg  gGGGGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGgg  ggGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGgg  ggGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGg   GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG   gGGGGGGGGGGGGGG
-GGGGGGGGGGGGGG   ggggGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGgggg   GGGGGGGGGGGGGG
-GGGGGGGGGGGGg   gGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGg   gGGGGGGGGGGGG
-GGGGGGGGGGGG   GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG   GGGGGGGGGGGG
-GGGGGGGGGGg    gGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGg    gGGGGGGGGGG
-GGGGGGGG                                                           GGGGGGG
-GGGGGGGG                                                           GGGGGGG
-GGGGGGGGgg    gGGGGGGGGGGGGGGGGGGGg    gGGGGGGGGGGGGGGGGGGGg    ggGGGGGGGG
-GGGGGGGGGg    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    gGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGGGGGGGGGGGGG    GGGGGGGGGG
-GGGGGGGGGg    gGGGGGGGGGGGGGGGGGGGg    gGGGGGGGGGGGGGGGGGGGg    gGGGGGGGGG
-GGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGG
-GGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGG
-GGGGGGGGG      gGGGGGGGGGGGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGG
-GGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGG
-GGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGG
-               gG                       gG                       gG
+HTTP/1.1 206 Partial Content
+Date: Tue, 20 Oct 2020 21:46:23 GMT
+Server: Apache/2.2.15 (Red Hat)
+Strict-Transport-Security: max-age=63072000; includeSubdomains
+X-Content-Type-Options: nosniff
+Last-Modified: Thu, 20 Aug 2020 13:37:01 GMT
+ETag: "2b62632-3460-5ad4f370fe52b"
+Accept-Ranges: bytes
+Content-Length: 6705
+Content-Range: bytes 0-6704/13408
+Connection: close
+Content-Type: text/html; charset=UTF-8
 
-GGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGG
-GGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGG
-gGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGGGGGGGGGGGG      GGGGGGGGg
- gGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGg
-  ggGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGgg
-   gGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGg
-     ggGGGGGGGGGGGGGGGGG  GGGG     GGg    gGGg     gGGGGGGGGGGGGGGGgg
-       ggGGGGGGGGGGGGGGgg  GGGgGg  gG  Gg  Ggg gGGGGGGGGGGGGGGGGGgg
-         ggGGGGGGGGGGGGGG  GGGGg gGGGg    gGgGG    gGGGGGGGGGGGgg
-            ggGGGGGGGGGGG  GGGg  gGGG  gG  Gg  gGg  gGGGGGGGGgg
-               gGGGGGGGGG  gGg  gGGgGg    gGgg     gGGGGGGGg
-                  ggGGGGGggGGggGGGGGGggggGGGGggggGGGGGgg
-                    ggGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGgg
-                         ggGGGGGGGGGGGGGGGGGGGGgg
-                               ggGGGGGGGGgg
-                                  gggggg                                TM
--->
-    <meta charset="utf-8" />
-<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-50116422-8", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
-<meta name="twitter:card" content="summary" />
-<link rel="canonical" href="https://cs.uga.edu/directory/people/hamid-r-arabnia" />
-<meta name="twitter:description" content="Research Focus: 
-Parallel &amp; Distributed Processing Techniques &amp; Algorithms, Supercomputing, Big Data Analytics &amp; Imaging Science.
-Recent Activities include: studying ways to promote legislation that would prevent cyber stalking, cyber harassment, and cyber bullying. Won Default Judgement in one of the first lawsuits of its kind in the United States (Court Ordered Default as to liability against defendant on ALL claims.)" />
-<meta name="twitter:title" content="Hamid R. Arabnia" />
-<meta name="description" content="Research Focus: 
-Parallel &amp; Distributed Processing Techniques &amp; Algorithms, Supercomputing, Big Data Analytics &amp; Imaging Science.
-Recent Activities include: studying ways to promote legislation that would prevent cyber stalking, cyber harassment, and cyber bullying. Won Default Judgement in one of the first lawsuits of its kind in the United States (Court Ordered Default as to liability against defendant on ALL claims.)" />
-<meta name="twitter:url" content="https://cs.uga.edu/directory/people/hamid-r-arabnia" />
-<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
-<meta name="MobileOptimized" content="width" />
-<meta name="HandheldFriendly" content="true" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="/sites/default/files/favicon_0.png" type="image/png" />
-<link rel="revision" href="https://cs.uga.edu/directory/people/hamid-r-arabnia" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
 
-    <title>Hamid R. Arabnia | Computer Science</title>
-    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_cQou_NptqtFEEfRtZKv7ALcfUSaY6aLa6pyNeoAcLQc.css" />
-<link rel="stylesheet" media="all" href="/sites/default/files/css/css_-VVcNtKyE5L7HMlSdYCYPzgoSPPhLjBTR5aWgHwWnQQ.css" />
-<link rel="stylesheet" media="all" href="https://design.online.uga.edu/v1.0.1/css/base.css" />
-<link rel="stylesheet" media="all" href="/sites/default/files/css/css__tmf5REOVKu0JWY69AKVaLUYB7yF-bLI63qjlGf-dSs.css" />
+<head>
 
-    
-<!--[if lte IE 8]>
-<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
-<![endif]-->
-<script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.3.1"></script>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Syllabus</title>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2622296-54"></script>
-    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-2622296-54'); </script>
+  <style type="text/css">
+    body {
+      background-color: white;
+      max-width: 800px;
+      text-align: center;
+      margin: auto;
+      color: black;
+    }
+
+    td {
+      text-align: justify;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  </style>
 </head>
-  <body class="white-menu main-title-empty content-sidebar-first-closed sidebars-empty featured-empty both-empty uga-left uga-right uga-both secondary-both-empty tertiary-both-empty quaternary-both-empty path-node not-frontpage page-node-type-personnel">
-        <a href="#main" class="visually-hidden focusable">
-      Skip to main content
-    </a></br>
-    <a href="#navigation" class="visually-hidden focusable">
-    Skip to main menu
-    </a>
-    
-      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
-          <header class="header cmp-header" role="banner" aria-label="Site header" class="obj-limit-width">
-  <div class="cmp-header__title-bar">
-    <div class="cmp-title-bar">
-      <div class="cmp-site-title">
-          <div>
-    <div id="block-gold-branding" class="site-branding block block-system block-system-branding-block util-margin-bottom-lg">
-  
-    
-        <a href="/" title="Home" rel="home" class="site-branding__logo cmp-site-title__link">
-      <img src="/sites/default/files/Print-CS-A%26S-XH-FC.png" alt="Home" class="cmp-site-title__logo" />
-    </a>
-        <div class="site-branding__text">
-              <div class="site-branding__name">
-          <a href="/" title="Home" rel="home">Computer Science</a>
-        </div>
-          </div>
-  </div>
 
-  </div>
-
-      </div>
-      <div class="cmp-title-bar__features">
-        <button class="cmp-title-bar__menu-toggle js-menu-open">
-          <svg viewBox="0 0 16 14" class="cmp-title-bar__menu-icon">
-            <path d="M1,1 15,1 M1,7 15,7 M1,13 15,13" /></svg>
-          Menu
-        </button>
-              
-    <div class="cmp-title-bar__actions">
-<nav role="navigation" aria-labelledby="block-minimenu-menu" id="block-minimenu" class="block block-menu navigation menu--mini-menu cmp-actions-nav">
-            
-  <h2 class="visually-hidden" id="block-minimenu-menu">Mini Menu</h2>
-  
-
-        
-
-                          <a href="/support-us" class="cmp-actions-nav__link" data-drupal-link-system-path="node/19">Give Now</a>
-       
-
-  </nav>
-</div>
-
-
-         <button class="cmp-title-bar__search-toggle js-search-toggle" data-icon-hidden="icon-search" data-icon-expanded="icon-up-arrow">
-          <span class="util-visually-hidden">Search</span>
-        </button> 
-      </div>
-      
-      <div class="cmp-header-search js-search">
-        <form action="/search/node" method="get" class="cmp-header-search__form" id="search-block-form" data-drupal-form-fields="site-search">
-          <div class="cmp-header-search__form-container js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
-            <label class="util-visually-hidden" for="site-search">Search this site</label>
-            <div class="cmp-header-search__field-container">
-              <input id="site-search" class="cmp-header-search__field js-search-field js-form-submit form-submit form-search" type="search" placeholder="Search" data-drupal-selector="site-search" name="keys"/>
-            </div>
-            <button class="cmp-header-search__button icon-search" type="submit">
-              <span class="util-visually-hidden">
-                Submit Search
-              </span>
-            </button>
-          </div>
-        </form>
-      </div> 
-    </div>
-
-    <div class="cmp-nav js-menu">
-      <nav>
-        <div class="cmp-nav__actions">
-          <button class="cmp-nav__close js-menu-close">
-            <svg class="cmp-nav__close-icon" viewBox="0 0 16 16">
-              <path d="M1,1 15,15 M 1,15, 15,1" /></svg>
-            Close
-          </button>
-
-          <a href="/" class="cmp-nav__title icon-shield">Site name</a>
-        </div>
-                    <div id="navigation" class="obj-limit-width">
-              <div>
-    <nav role="navigation" aria-labelledby="block-mainmenu-2-menu" id="block-mainmenu-2" class="block block-menu navigation menu--main">
-            
-  <h2 class="visually-hidden" id="block-mainmenu-2-menu">Main menu</h2>
-  
-
-        
-
-
-                   <ul class="menu menu-main cmp-nav__list">                      
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/directory/all" class="cmp-nav__link util-pad-all-md" data-drupal-link-system-path="directory/all">People</a>
-                                             <ul class="menu menumain__submenu cmp-subnav cmp-subnav1">                      
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/directory/faculty" title="" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="directory/faculty">Faculty</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item">          <a href="/directory/regular-faculty" title="" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="directory/regular-faculty">Regular</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/directory/emeritus-faculty" title="" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="directory/emeritus-faculty">Emeritus</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/directory/courtesy-appointment-faculty" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="directory/courtesy-appointment-faculty">Courtesy Appointment</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/directory/adjunct-faculty" title="" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="directory/adjunct-faculty">Adjunct</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/directory/instructor" title="" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="directory/instructor">Instructor</a>
-         
-      </li>
-              </ul>
-               <span class="has-arrow"><p>>></p></span>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/directory/graduate-students" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="directory/graduate-students">Graduate Students</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/directory/staff" title="" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="directory/staff">Staff</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/directory/administration" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="directory/administration">Administration</a>
-         
-      </li>
-              </ul>
-                   </li>
-                       
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/undergraduate-students" class="cmp-nav__link util-pad-all-md" data-drupal-link-system-path="node/1769">Undergraduate</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item">          <a href="/undergraduate-degrees" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1771">Undergraduate Degrees</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/undergraduate-certificates-minors" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1772">Undergraduate Certificates &amp; Minors</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item">          <a href="/applied-data-science-certificate-requirements" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1773">Applied Data Science Requirements</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/computing-certificate-requirements" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1774">Computing Certificate Requirements</a>
-         
-      </li>
-              </ul>
-               <span class="has-arrow"><p>>></p></span>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/double-dawgs-program" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1775">Double Dawgs Program</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/CSUA" title="CSUA Program" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1729">Computer Science Undergraduate Assistant (CSUA) Program</a>
-         
-      </li>
-              </ul>
-                   </li>
-                       
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/graduate-students" class="cmp-nav__link util-pad-all-md" data-drupal-link-system-path="node/1770">Graduate</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item">          <a href="/graduate-admissions" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/162">Graduate Admissions</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/ms-computer-science-thesis-option" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1778">MS in Computer Science (Thesis Option)</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/ms-computer-science-non-thesis-option" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1779">MS in Computer Science (Non-Thesis Option)</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/master-science-cybersecurity-and-privacy" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1788">MS in Cybersecurity and Privacy</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/master-applied-mathematical-sciences" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/185">Master of Applied Mathematical Sciences</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/doctor-philosophy-computer-science" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/182">PhD in Computer Science</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/certificate-cybersecurity" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/814">Certificate in Cybersecurity</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/doctor-philosophy-computer-science-phd-exams" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/183">PhD Exams</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/graduate-student-resources" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/375">Graduate Student Resources</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="https://osfa.uga.edu/apply-for-aid/graduate-and-professional-students/" class="cmp-subnav__link util-pad-all-md">Graduate Financial Assistance</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/computer-science-graduate-student-association" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1787">Graduate Student Association</a>
-         
-      </li>
-              </ul>
-                   </li>
-                       
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/student-organizations-resources" class="cmp-nav__link util-pad-all-md" data-drupal-link-system-path="node/1776">Student Resources</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item">          <a href="/scholarships" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/543">Scholarships</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/experiential-learning" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1730">Experiential Learning</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/opportunities-students" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/229">Student Opportunities</a>
-         
-      </li>
-              </ul>
-                   </li>
-                       
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/courses/all" class="cmp-nav__link util-pad-all-md" data-drupal-link-system-path="courses/all">Courses</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item">          <a href="/computer-science-course-syllabi" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/168">Course Information</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/courses/graduate" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="courses/graduate">Graduate Courses</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/courses/undergraduate" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="courses/undergraduate">Undergraduate courses</a>
-         
-      </li>
-              </ul>
-                   </li>
-                       
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/research" class="cmp-nav__link util-pad-all-md" data-drupal-link-system-path="research">Research</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item">          <a href="/research/labs" title="Find out more about the different research labs at computer science department..." class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="research/labs">Research Labs</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/research-clusters-1" title="Our faculty is composed of energetic and creative professors whose interests cover many of the growing or emerging research areas in computer science" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1511">Research Clusters</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/sites/default/files/submission.png" title="Click to view." class="cmp-subnav__link util-pad-all-md">Grants</a>
-         
-      </li>
-              </ul>
-                   </li>
-                       
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/news-and-events" class="cmp-nav__link util-pad-all-md" data-drupal-link-system-path="node/1465">News &amp; Events</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item">          <a href="/news/all" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="news/all">News</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/events" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="events">Events</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item">          <a href="/events/past" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="events/past">Past Events</a>
-         
-      </li>
-              </ul>
-               <span class="has-arrow"><p>>></p></span>
-         
-      </li>
-              </ul>
-                   </li>
-                       
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/facultystaff" class="cmp-nav__link util-pad-all-md" data-drupal-link-system-path="node/6">Faculty/Staff</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/login-manage-site" title="Access the faculty-only area or edit your personnel page. " class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/14">Departmental Login</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/faculty-directory" title="List of CS department faculty members" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/202">Faculty Directory</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/staff-directory" title="List of CS department staff" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/203">Staff Directory</a>
-         
-      </li>
-              </ul>
-                   </li>
-                       
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/heads-welcome" class="cmp-nav__link util-pad-all-md" data-drupal-link-system-path="node/462">About Us</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item menu-main__item--expanded">          <a href="/find-or-contact-us" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/2">Contact us</a>
-                                             <ul class="menumain__submenu cmp-subnav cmp-subnav1 menu">                      
-                    <li class="cmp-nav__item">          <a href="/visit-us" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/205">Visit Us</a>
-         
-      </li>
-              </ul>
-               <span class="has-arrow"><p>>></p></span>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/sites/default/files/pictures/CS_Recruitment_Guide.pdf" title="Click to view." class="cmp-subnav__link util-pad-all-md">Recruiting Students</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/newsletter" class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/1784">Newsletter</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/mission" title="The CS department mission statement." class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/191">Mission Statement</a>
-         
-      </li>
-                       
-                    <li class="cmp-nav__item">          <a href="/media-reports" title="Information for members of broadcast and print media." class="cmp-subnav__link util-pad-all-md" data-drupal-link-system-path="node/206">Media Reports</a>
-         
-      </li>
-              </ul>
-                   </li>
-              </ul>
-   
-
-  </nav>
-
-  </div>
-
-            </div>
-                 </div>
-      </nav>
-    </div>
-  </div>
-</header>
-        <div id="slide-wrapper">
-          <div id="slide">
-              <h2 class="visually-hidden">Slideshow</h2>
-            
-          </div>
-        </div>
-      <div id="lower-page-wrapper">
-                          <div class="util-pad-horiz-lg util-pad-vert-xl">                         <div id="drupal">
-              <div class="obj-limit-width">
-                  <div>
-    <div data-drupal-messages-fallback class="hidden"></div>
-
-  </div>
-
-              </div>
-            </div>
-                            <div id="main">
-                    <div class="obj-grid util-pad-vert-md obj-grid--gap-md@md obj-limit-width">
-            <div class="obj-grid obj-grid__full obj-grid--gap-md@md obj-grid__full@md obj-grid__9-12@lg">
-              <div class="obj-grid__full">
-                  <div>
-    
-
-<div id="block-gold-page-title" class="block block-core block-page-title-block util-margin-bottom-md">
-  
-    
-      <div class="content">
-      
-      <h1 class="page-title cmp-heading-1 util-margin-top-lg util-margin-bottom-md"><span>Hamid R. Arabnia</span>
-</h1>
-
-
-    </div>
-  </div>
-
-  </div>
-
-              </div>
-            <div id="content" class="obj-grid__full">
-                <div>
-    <div id="block-gold-mainpagecontent" class="block block-system block-system-main-block util-margin-bottom-lg">
-  
-    
-      <div class="content">
-      <article role="article" about="/directory/people/hamid-r-arabnia">
-
-  
-    
-
-  
-  <div>
-    
-            <div class=field_photo>    <picture>
-                  <source srcset="/sites/default/files/styles/square_400x400/public/faculty_12.jpg?itok=giQ_KbrM 1x" media="all and (min-width: 90em)" type="image/jpeg"/>
-              <source srcset="/sites/default/files/styles/square_400x400/public/faculty_12.jpg?itok=giQ_KbrM 1x" media="all and (min-width: 60em) and (max-width:90em)" type="image/jpeg"/>
-              <source srcset="/sites/default/files/styles/square_320x320/public/faculty_12.jpg?itok=slpldU0R 1x" media="all and (min-width: 45em) and (max-width:60em)" type="image/jpeg"/>
-              <source srcset="/sites/default/files/styles/square_320x320/public/faculty_12.jpg?itok=slpldU0R 1x" media="all and (min-width: 30em) and (max-width: 45em)" type="image/jpeg"/>
-              <source srcset="/sites/default/files/styles/square_320x320/public/faculty_12.jpg?itok=slpldU0R 1x" media="(min-width: 0em)" type="image/jpeg"/>
-                  <img src="/sites/default/files/styles/square_400x400/public/faculty_12.jpg?itok=giQ_KbrM" alt="" typeof="foaf:Image" />
-
-  </picture>
-
-</div>
-      
-<div  class="cmp-heading-6">
-      
-      <div class="field">
-              <div class=field_job_title>Professor Emeritus of Computer Science</div>
-              <div class=field_job_title>Ph.D.: Kent at Canterbury, 1987</div>
-          </div>
-  
-  </div>
-
-<div  id="contact-info" class="clearfix">
-    <h2>Basic Information</h2>
-      
-            <div class=field_email><a href="mailto:hra@uga.edu">hra@uga.edu</a></div>
-      
-  <div class="field">
-    <div class="field-above"><strong>Labs:</strong></div>
-          <div class="field_multiple">
-              <div class=field_labs><a href="/research/lab/cortical-architecture-imaging-and-discovery-caid-lab" hreflang="en">Cortical Architecture Imaging and Discovery (CAID) Lab</a></div>
-              </div>
-      </div>
-
-  <div class="field">
-    <div class="field-above"><strong>Personal Website:</strong></div>
-          <div class="field_multiple">
-              <div class=field_personal_website><a href="http://cobweb.cs.uga.edu/~hra">Home Page</a></div>
-              </div>
-      </div>
-
-  <div class="field">
-    <div class="field-inline"><strong>Office:</strong></div>
-          <div class="field_multiple">
-              <div class=field_office_number>421 Boyd Graduate Studies Research Center</div>
-              </div>
-      </div>
-
-            <div class=field_phone_number><a href="tel:%28706%29542-3480">(706) 542-3480</a></div>
-      
-  </div>
-<details class="js-form-wrapper form-wrapper">
-  <summary role="button" aria-expanded="false" aria-pressed="false" class="cmp-accordion__button">Biography</summary>
-  
-              <div class="body cmp-paragraph"><h3><strong>Research Focus: </strong></h3>
-<p>Parallel &amp; Distributed Processing Techniques &amp; Algorithms, Supercomputing, Big Data Analytics &amp; Imaging Science.</p>
-<p>Recent Activities include: studying ways to promote legislation that would prevent cyber stalking, cyber harassment, and cyber bullying. Won Default Judgement in one of the first lawsuits of its kind in the United States (Court Ordered Default as to liability against defendant on ALL claims.)</p>
-</div>
-      
-  
-</details>
-<details class="js-form-wrapper form-wrapper">
-  <summary role="button" aria-expanded="false" aria-pressed="false" class="cmp-accordion__button">Research</summary>
-  
-  
-  <div class="field">
-    <div class="field-above"><strong>Research Areas:</strong></div>
-          <div class="field_multiple">
-              <div class=field_research_areas><a href="/research/content/computer-vision-and-image-processing" hreflang="en">Computer Vision and Image Processing</a></div>
-          <div class=field_research_areas><a href="/research/content/parallel-processing" hreflang="en">Parallel Processing</a></div>
-              </div>
-      </div>
-
-  
-</details>
-
-  </div>
-
-</article>
-
-    </div>
-  </div>
-<div class="views-element-container block block-views block-views-blocknews-block-4 util-margin-bottom-lg" id="block-views-block-news-block-4">
-  
-      <h2>Articles Featuring Hamid R. Arabnia</h2>
-    
-      <div class="content">
-      <div><div class="view view-news view-id-news view-display-id-block_4">
-  
-    
-      
-      <div class="view-content obj-grid obj-grid--gap-md">
-          <div class="views-row obj-grid__full">
-    <div class="util-pad-all-lg"><div class="views-field views-field-title"><span class="field-content"><a href="/news/stories/2013/congratulations-prof-hamid-arabnia-who-was-awarded" class="util-delink"></br>
-<div class="wrap_clear_left"><h3 class="cmp-heading-h5 util-margin-top-none">Congratulations to Prof. Hamid Arabnia who was awarded ...</h3></div></a></span></div><div class="views-field views-field-created"><span class="field-content">Thursday, July 4, 2013 - 11:04am</span></div><div class="views-field views-field-body"><div class="field-content"><p class="wrap util-margin-top-md"></p><p><span>Congratulations to Prof. </span><a href="/directory/people/hamid-r-arabnia">Hamid Arabnia</a><span> who was awarded the Outstanding Achievement Award in recognition of his leadership and outstanding research contribution to the field of Supercomputing at…</span></p></div></div></div>
-  </div>
-
-    </div>
-  
-          </div>
-</div>
-
-    </div>
-  </div>
-
-  </div>
-
-            </div>
-           </div>
-           <div id="sidebar-second" class="obj-grid__full obj-grid__full@md obj-grid__3-12@lg">
-               <div>
-    <nav role="navigation" aria-labelledby="block-gold-mainnavigation-7-menu" id="block-gold-mainnavigation-7" class="block block-menu navigation menu--main">
-      
-  <h2 id="block-gold-mainnavigation-7-menu">Directory</h2>
-  
-
-        
-              <ul>
-              <li>
-        <a href="/directory/faculty" title="" data-drupal-link-system-path="directory/faculty">Faculty</a>
-              </li>
-          <li>
-        <a href="/directory/graduate-students" data-drupal-link-system-path="directory/graduate-students">Graduate Students</a>
-              </li>
-          <li>
-        <a href="/directory/staff" title="" data-drupal-link-system-path="directory/staff">Staff</a>
-              </li>
-          <li>
-        <a href="/directory/administration" data-drupal-link-system-path="directory/administration">Administration</a>
-              </li>
-        </ul>
-  
-
-
-  </nav>
-
-  </div>
-
-           </div>
-         </div>
-                  </div>
-                              <div id="lower-content" class="obj-grid__full obj-limit-width">
-                <div>
-    <div class="views-element-container block block-views block-views-blockdirectory-block-7 util-margin-bottom-lg" id="block-gold-views-block-directory-block-7">
-  
-      <h2>More of My Students</h2>
-    
-      <div class="content">
-      <div><div class="view view-directory view-id-directory view-display-id-block_7">
-  
-    
-      
-      <div class="view-content obj-grid obj-grid--gap-lg">
-      
-
-    <div class="views-row obj-grid__full obj-grid__full@sm obj-grid__half@md obj-grid__third@lg obj-grid__quarter@xl util-margin-bottom-lg"><span class="views-field views-field-title"><span class="field-content"><a href="/directory/people/mojtaba-sedigh-fazli" class="util-delink">  <img src="/sites/default/files/styles/photo_medium/public/Mojtaba_Sedigh_Fazli2_0.png?itok=PBlfc7Ih" width="200" height="200" alt="" typeof="Image" />
-
-
-</br><h3 class="cmp-heading-5">Mojtaba Sedigh Fazli</h3>
-</a></span></span><div class="views-field views-field-field-job-title"><em class="field-content">Ph.D. Candidate </em></div></div>
-    <div class="views-row obj-grid__full obj-grid__full@sm obj-grid__half@md obj-grid__third@lg obj-grid__quarter@xl util-margin-bottom-lg"><span class="views-field views-field-title"><span class="field-content"><a href="/directory/people/saber-soleymani" class="util-delink">  <img src="/sites/default/files/styles/photo_medium/public/saber-soleymani.jpg?itok=7NBv312N" width="200" height="200" alt="" typeof="Image" />
-
-
-</br><h3 class="cmp-heading-5">Saber Soleymani</h3>
-</a></span></span></div>
-    <div class="views-row obj-grid__full obj-grid__full@sm obj-grid__half@md obj-grid__third@lg obj-grid__quarter@xl util-margin-bottom-lg"><span class="views-field views-field-title"><span class="field-content"><a href="/directory/people/hamed-yaghoobian" class="util-delink">  <img src="/sites/default/files/styles/photo_medium/public/IMG_1343.jpg?itok=uEabGNj7" width="200" height="200" alt="" typeof="Image" />
-
-
-</br><h3 class="cmp-heading-5">Hamed Yaghoobian</h3>
-</a></span></span></div>
-
-    </div>
-  
-          </div>
-</div>
-
-    </div>
-  </div>
-<div class="views-element-container block block-views block-views-blockdirectory-block-6 util-margin-bottom-lg" id="block-gold-views-block-directory-block-6">
-  
-      <h2>My Graduate Students</h2>
-    
-      <div class="content">
-      <div><div class="view view-directory view-id-directory view-display-id-block_6">
-  
-    
-      
-      <div class="view-content obj-grid obj-grid--gap-lg">
-      
-
-    <div class="views-row obj-grid__full obj-grid__full@sm obj-grid__half@md obj-grid__third@lg obj-grid__quarter@xl util-margin-bottom-lg"><span class="views-field views-field-title"><span class="field-content"><a href="/directory/people/abolfazl-farahani" class="util-delink">  <img src="/sites/default/files/styles/photo_medium/public/farahani_0.png?itok=DB2zzkUo" width="200" height="200" alt="" typeof="Image" />
-
-
-</br><h3 class="cmp-heading-5">Abolfazl Farahani</h3>
-</a></span></span><div class="views-field views-field-field-job-title"><em class="field-content">PhD Student</em></div></div>
-    <div class="views-row obj-grid__full obj-grid__full@sm obj-grid__half@md obj-grid__third@lg obj-grid__quarter@xl util-margin-bottom-lg"><span class="views-field views-field-title"><span class="field-content"><a href="/directory/people/farid-ghareh-mohammadi" class="util-delink">  <img src="/sites/default/files/styles/photo_medium/public/me.png?itok=xrYwqAy5" width="200" height="200" alt="" typeof="Image" />
-
-
-</br><h3 class="cmp-heading-5">Farid Ghareh Mohammadi</h3>
-</a></span></span><div class="views-field views-field-field-job-title"><em class="field-content">Ph.D Student</em></div></div>
-
-    </div>
-  
-          </div>
-</div>
-
-    </div>
-  </div>
-
-  </div>
-
-            </div>
-                    </div>                 </div>
-<!-- end main-->
-      <div id="featured-three-columns">
-                                      </div>
-      <div id="secondary">
-                                      </div>
-      <div id="uga">
-                 <div class="util-pad-horiz-lg util-pad-vert-xl">                           <div class="obj-grid obj-limit-width obj-grid--gap-xl@md">
-            <div id="uga-left" class="obj-grid__full obj-grid__half@md">
-                 <div>
-    <div id="block-gold-supportus" class="block block-block-content block-block-content0f282148-9915-4749-8a4e-4a08540c47db util-margin-bottom-lg">
-  
-      <h2>Support us</h2>
-    
-      <div class="content">
-                  <div class="body cmp-paragraph"><p>We appreciate your financial support. Your gift is important to us and helps support critical opportunities for students and faculty alike, including lectures, travel support, and any number of educational events that augment the classroom experience. <a href="/support-us">Click here to learn more about giving</a>.</p>
-</div>
-      
-    </div>
-  </div>
-
-  </div>
-
-            </div>
-            <div id="uga-right" class="obj-grid__full obj-grid__half@md">
-                 <div>
-    <div id="block-gold-giveblockbigtext" class="block block-block-content block-block-content084d0a41-f97a-4ee9-a5c8-52e5b3da7e95 util-margin-bottom-lg">
-  
-    
-      <div class="content">
-                  <div class="body cmp-paragraph"><p>Every dollar given has a direct impact upon our students and faculty.</p>
-</div>
-      
-    </div>
-  </div>
-
-  </div>
-
-            </div>
-          </div>
-                          </div>               </div>
-      <div id="tertiary">
-                              </div>
-      <div id="quaternary">
-                              </div>
-    </div>
-      <div id="unit-footer">
-                  <div class="util-pad-horiz-lg util-pad-vert-xl obj-limit-width">
-            <div class="container clearfix">
-                <div>
-    <div id="block-gold-departmentofname" class="block block-block-content block-block-contentb2fe7053-9cf7-4335-b5a9-859ce92b82e4 util-margin-bottom-lg">
-  
-    
-      <div class="content">
-      
-            <div class=field_unit_name>Department of Computer Science</div>
-      
-            <div class=field_address>415 Boyd Graduate Studies Research Center<br />
-University of Georgia<br />
-Athens, GA 30602-7404</div>
-      
-      <div class="field">
-              <div class=field_parent_unit_optional_><a href="https://eits.uga.edu/access_and_security/infosec/pols_regs/policies/privacy/">Privacy Policy</a></div>
-          </div>
-  
-            <div class=field_login_page><a href="/login-manage-site" hreflang="en">Login for Faculty, Staff and Students</a></div>
-      
-    </div>
-  </div>
-<div id="block-gold-departmentcontactinfo" class="block block-block-content block-block-content6103b075-a34b-4e10-adb4-2d9957038a7a util-margin-bottom-lg">
-  
-    
-      <div class="content">
-      
-  <div class="field">
-    <div class="field-inline"><strong>Phone:</strong></div>
-              <div class=field_phone><a href="tel:706-542-2911">706-542-2911</a></div>
-          </div>
-
-  <div class="field">
-    <div class="field-inline"><strong>Fax:</strong></div>
-              <div class=field_fa><a href="tel:706-542-2966">706-542-2966</a></div>
-          </div>
-
-            <div class=field_google_map><a href="https://maps.google.com/maps?q=415%20Boyd%20Graduate%20Studies%20Research%20Center&amp;hl=en&amp;ll=33.944001%2C-83.380351&amp;spn=0.041263%2C0.063043&amp;sll=">Google Map</a></div>
-      
-    </div>
-  </div>
-<div id="block-gold-departmentsocialmedia" class="block block-block-content block-block-contentd607ca3d-6cd7-4d2b-a707-cdaf0e19fa67 util-margin-bottom-lg">
-  
-    
-      <div class="content">
-      
-            <div class=field_facebook><a href="https://www.facebook.com/pg/cs.uga.edu/community/">Department&#039;s Facebook Page</a></div>
-      
-            <div class=field_twitter><a href="https://twitter.com/cs_uga">Department&#039;s Twitter Feed</a></div>
-      
-            <div class=field_instagram><a href="https://instagram.com/csci_uga">Department&#039;s Instagram Page</a></div>
-      
-    </div>
-  </div>
-
-  </div>
-
-            </div>
-          </div>               </div>
-      <footer class="cmp-footer">
-          <div class="cmp-footer__container">
-    <nav class="obj-grid util-display-none@print">
-      <div class="obj-grid__full obj-grid__4-12@md obj-grid__3-12@lg">
-
-        <a class="cmp-footer__logo-link" href="https://www.uga.edu/">
-            <img src="/themes/custom/gold/img/RGB-GEORGIA-FS-CW.png" class="util-display-none@print" alt="University of Georgia">
-          </a>
-      </div>
-
-      <div class="obj-grid__full obj-grid__8-12@md obj-grid__9-12@lg">
-        <div class="obj-grid">
-          <div class="obj-grid__full obj-grid__6-12@sm obj-grid__3-12@lg">
-
-            <div class="cmp-footer-nav">
-              <h2 class="cmp-footer-nav__heading">Franklin College</h2>
-              <ul class="cmp-footer-nav__list">
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://www.franklin.uga.edu">Franklin College of Arts & Sciences</a>
-                </li>
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://www.franklin.uga.edu/divisions/">Divisions</a>
-                </li>
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://www.franklin.uga.edu/departments-list">Departments & Schools</a>
-                </li>
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://www.franklin.uga.edu/centers-institutes-and-programs">Centers, Institutes & Programs</a>
-                </li>
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://franklin.uga.edu/office-information-technology">IT Support</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="obj-grid__full obj-grid__6-12@sm obj-grid__3-12@lg">
-
-            <div class="cmp-footer-nav">
-              <h2 class="cmp-footer-nav__heading">Franklin Degrees and Certificates</h2>
-              <ul class="cmp-footer-nav__list">
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://www.franklin.uga.edu/majors-degrees">Undergraduate Majors and Degrees</a>
-                </li>
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://www.franklin.uga.edu/double-dawgs">Double Dawgs</a>
-                </li>
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://grad.uga.edu/index.php/degrees/">Graduate Degrees</a>
-                </li>
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://www.franklin.uga.edu/graduate-admissions-portals">Graduate Admissions Portals</a>
-                </li>
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://www.franklin.uga.edu/experiential-learning">Experiential Learning</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="obj-grid__full obj-grid__6-12@sm obj-grid__3-12@lg">
-
-            <div class="cmp-footer-nav">
-              <h2 class="cmp-footer-nav__heading">Resources</h2>
-              <ul class="cmp-footer-nav__list">
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://my.uga.edu/">MyUGA</a>
-                </li>
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="http://hr.uga.edu/applicants/">UGA Employment Opportunities</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="obj-grid__full obj-grid__6-12@sm obj-grid__3-12@lg">
-
-            <div class="cmp-footer-nav">
-              <h2 class="cmp-footer-nav__heading">Copyright and Privacy</h2>
-              <ul class="cmp-footer-nav__list">
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://mc.uga.edu/policy/trademark">Copyright and Trademarks</a>
-                </li>
-                <li class="cmp-footer-nav__item">
-                  <a class="cmp-footer-nav__link" href="https://eits.uga.edu/access_and_security/infosec/pols_regs/policies/privacy/">Privacy</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <div class="obj-grid">
-      <div class="obj-grid__full obj-grid__5-12@md">
-
-        <p class="cmp-footer__copyright">&copy;University of Georgia, Athens, <abbr title="Georgia">GA</abbr> 30602<br><a href="tel:7065423000" class="util-color-white">(706)&#8209;542&#8209;3000</a></p>
-      </div>
-
-      <div class="obj-grid__full obj-grid__7-12@md util-display-none@print">
-
-        <div class="cmp-footer__social">
-          <h3 class="util-visually-hidden">Connect with us</h3>
-          <ul class="cmp-social">
-            <li class="cmp-social__item">
-              <a class="cmp-social__link" href="http://facebook.com/universityofga">
-                  <div class="cmp-social__icon cmp-social__icon--facebook">
-
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="icon-facebook" viewBox="0 0 32 32">
-                        <title>Facebook</title>
-                        <path fill="currentColor" d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
-                      </svg>
-
-
-
-                    </div>
-                  </a>
+<body text="black">
+  <h1>CSCI 6760 - Computer Networks</h1>
+  <h2>Fall 2020</h2>
+
+
+  <br>
+
+  <table style="text-align: left; height: 164px; background-color: silver;
+  margin: auto;" border="0" cellpadding="1" cellspacing="1">
+
+    <tbody>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; background-color:
+        white; ">Instructor</td>
+        <td style="vertical-align: top; background-color: white; ">Prof. Roberto
+        Perdisci (email: perdisci [at] uga.edu)</td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; background-color:
+        white; ">Credits</td>
+        <td style="vertical-align: top; background-color: white; ">4<br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; background-color:
+        white; ">Location</td>
+        <td style="vertical-align: top; background-color: white; ">All classes
+        will be in Boyd GSRC 222<br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; background-color:
+        white; ">Time</td>
+        <td style="vertical-align: top; background-color: white; ">
+          2:20pm-3:35pm TR, 3pm-3:50pm W -- (see the 
+          <a href="https://reg.uga.edu/general-information/daily-class-schedule/"> official schedule</a>)<br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; background-color:
+        white; ">Prerequisite Knowledge</td>
+        <td style="vertical-align: top; background-color: white; "
+        background-color:="">Programming Languages/OS: good knowledge of <span style="font-weight:
+        bold;">Python</span> and <span style="font-weight:
+        bold;">Linux</span>.<br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; background-color:
+        white; " background-color:="" white;="">Office Hours</td>
+        <td style="vertical-align: top; background-color: white; ">
+        Tuesdays and Thursdays, 3:35-4:35pm (online only, by appointment)<br>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <br>
+
+  <table style="text-align: left; height: 1000px;" border="0" cellpadding="2"
+  cellspacing="2">
+
+    <tbody>
+      <tr>
+        <td style="vertical-align: top;"><span style="font-weight:
+        bold;">NOTE</span>: The course syllabus is a general plan for the
+        course; deviations announced to the class by the instructor may be
+        necessary.<br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <hr style="width: 100%; height: 1px;">
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;"><big><big><span style="font-weight:
+        bold;">Course Overview</span></big></big><br>
+          <br>The Internet has become a fundamental component of modern life. An
+          increasingly large number of people rely on the Internet to
+          communicate with one another, search for information on the most
+          diverse topics, do business, find and purchase goods, etc. This course
+          focuses on how the Internet works. We will start by viewing the
+          Internet for what it really is, namely a large number of
+          interconnected computer networks, and analyze how devices connect to
+          the Internet to exchange information. We will first analyze some of
+          the most important application protocols such as HTTP, SMTP, DNS,
+          etc., that enable Internet nodes to request and offer services (e.g.,
+          access web pages, send emails, etc.). We will then move down the OSI
+          model to consider the transport and network layers, with focus on
+          understanding the UDP and TCP protocols, flow and congestion control,
+          and the IP and routing protocols. Next we will consider the link and
+          physical layers. Finally, we will discuss topics related to Network
+          Security, such as spoofing, poisoning, Firewalls, etc.&nbsp; <br>
+          <br> 
+          <span style="font-weight: bold;">Prerequisite Knowledge</span>: The class
+          projects will require a good knowledge of the Python programming language. Furthermore, most
+          projects will be based on code written mainly for Linux systems,
+          therefore good familiarity with Linux is also required.<br>
+          <br>
+          <span style="font-weight: bold;">Books</span>:<br>
+          <ul>
+            <li><span style="font-weight: bold;">Textbook</span>: <span
+            style="font-style: italic;">Computer Networking: A Top-Down
+            Approach, 7/e</span><br>
+              James F. Kurose and Keith W. Ross<br>
+              Pearson<br>
+              <br>
             </li>
-            <li class="cmp-social__item">
-              <a class="cmp-social__link" href="https://twitter.com/universityofga">
-                  <div class="cmp-social__icon cmp-social__icon--twitter">
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="icon-twitter" viewBox="0 0 32 32">
-                        <title>Twitter</title>
-                        <path fill="currentColor" d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z" />
-                      </svg>
 
-
-
-
-                    </div>
-                  </a>
+            <li><span style="font-weight: bold;">Recommended Readings</span>:
+            <span style="font-style: italic;">TCP/IP Illustrated, Volume 1: The
+            Protocols</span><br>
+              W. Richard Stevens<br>
+              Addition Wesley<br>
+              <br>
             </li>
-            <li class="cmp-social__item">
-              <a class="cmp-social__link" href="https://www.instagram.com/universityofga">
-                  <div class="cmp-social__icon cmp-social__icon--instagram">
+            <li><span style="font-weight: bold;">Recommended Readings</span>:
+            <span style="font-style: italic;">Network Security: Private
+            Communication in a Public World, 2/e</span><br>
 
-
-
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="icon-instagram" viewBox="0 0 32 32">
-                        <title>Instagram</title>
-                        <path fill="currentColor" d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z" />
-                      </svg>
-
-                    </div>
-                  </a>
+              Charile Kaufman, Radia Perlman, Mike Speciner<br>
+              Prentice Hall<br>
+              <br>
             </li>
-            <li class="cmp-social__item">
-              <a class="cmp-social__link" href="http://youtube.com/user/UniversityOfGeorgia">
-                  <div class="cmp-social__icon cmp-social__icon--youtube">
 
 
 
-
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="icon-youtube" viewBox="0 0 32 32">
-                        <title>YouTube</title>
-                        <path fill="currentCOlor" d="M31.681 9.6c0 0-0.313-2.206-1.275-3.175-1.219-1.275-2.581-1.281-3.206-1.356-4.475-0.325-11.194-0.325-11.194-0.325h-0.012c0 0-6.719 0-11.194 0.325-0.625 0.075-1.987 0.081-3.206 1.356-0.963 0.969-1.269 3.175-1.269 3.175s-0.319 2.588-0.319 5.181v2.425c0 2.587 0.319 5.181 0.319 5.181s0.313 2.206 1.269 3.175c1.219 1.275 2.819 1.231 3.531 1.369 2.563 0.244 10.881 0.319 10.881 0.319s6.725-0.012 11.2-0.331c0.625-0.075 1.988-0.081 3.206-1.356 0.962-0.969 1.275-3.175 1.275-3.175s0.319-2.587 0.319-5.181v-2.425c-0.006-2.588-0.325-5.181-0.325-5.181zM12.694 20.15v-8.994l8.644 4.513-8.644 4.481z" />
-                      </svg>
-                    </div>
-                  </a>
-            </li>
-            <li class="cmp-social__item">
-              <a class="cmp-social__link" href="https://www.linkedin.com/school/university-of-georgia/">
-                  <div class="cmp-social__icon cmp-social__icon--linkedin">
-
-
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="icon-linkedin" viewBox="0 0 32 32">
-                        <title>Linked In</title>
-                        <path fill="currentColor" d="M12 12h5.535v2.837h0.079c0.77-1.381 2.655-2.837 5.464-2.837 5.842 0 6.922 3.637 6.922 8.367v9.633h-5.769v-8.54c0-2.037-0.042-4.657-3.001-4.657-3.005 0-3.463 2.218-3.463 4.509v8.688h-5.767v-18z M2 12h6v18h-6v-18z M8 7c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z" />
-                      </svg>
-
-
-                    </div>
-                  </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-      </footer>
-   
-  </div>
-
-    
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/9","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"field_group":{"details":{"mode":"default","context":"view","settings":{"id":"","classes":"","open":false,"required_fields":false}},"html_element":{"mode":"default","context":"view","settings":{"element":"div","show_label":false,"label_element":"h3","attributes":"","effect":"none","speed":"fast","id":"","classes":"cmp-heading-6","label_element_classes":""}}},"user":{"uid":0,"permissionsHash":"20502f45e8e7c67429584d75f53ba98efcda6b9d2f19d417aa349f618e3b886a"}}</script>
-<script src="/sites/default/files/js/js_3JTnzJYE5TL4YrNejlwpINk9eV8TAtqrSLBEGwMKC9s.js"></script>
-<script src="https://design.online.uga.edu/v1.0.1/js/scripts.js"></script>
-<script src="/sites/default/files/js/js_plksFdaD4N75kaHnMBZ0Z7exxolxEw2VjjcguIWEEiE.js"></script>
-
-  </body>
-</html>
+            <li><span style="font-weight: bold;">Other resources</span>:&nbsp;
+            <span style="font-style: italic;">The TCP/IP Guide</span><br>
+              Charles M. Kozierok<br>
+              Available online at: <a
+              href="http://www.tcpipguide.com/free/index.htm">http://www.tcpipguide.com/free/index.htm<br>
+              </a></li>
+  

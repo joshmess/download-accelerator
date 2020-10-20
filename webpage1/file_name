@@ -1,13 +1,13 @@
 HTTP/1.1 206 Partial Content
-Date: Tue, 20 Oct 2020 21:46:23 GMT
+Date: Tue, 20 Oct 2020 21:46:14 GMT
 Server: Apache/2.2.15 (Red Hat)
 Strict-Transport-Security: max-age=63072000; includeSubdomains
 X-Content-Type-Options: nosniff
 Last-Modified: Thu, 20 Aug 2020 13:37:01 GMT
 ETag: "2b62632-3460-5ad4f370fe52b"
 Accept-Ranges: bytes
-Content-Length: 6705
-Content-Range: bytes 0-6704/13408
+Content-Length: 13408
+Content-Range: bytes 0-13407/13408
 Connection: close
 Content-Type: text/html; charset=UTF-8
 
@@ -178,20 +178,23 @@ Content-Type: text/html; charset=UTF-8
               Available online at: <a
               href="http://www.tcpipguide.com/free/index.htm">http://www.tcpipguide.com/free/index.htm<br>
               </a></li>
-  HTTP/1.1 206 Partial Content
-Date: Tue, 20 Oct 2020 21:46:23 GMT
-Server: Apache/2.2.15 (Red Hat)
-Strict-Transport-Security: max-age=63072000; includeSubdomains
-X-Content-Type-Options: nosniff
-Last-Modified: Thu, 20 Aug 2020 13:37:01 GMT
-ETag: "2b62632-3460-5ad4f370fe52b"
-Accept-Ranges: bytes
-Content-Length: 6704
-Content-Range: bytes 6704-13407/13408
-Connection: close
-Content-Type: text/html; charset=UTF-8
+          </ul>
 
-r Presentations = 15%<br>
+
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <hr style="width: 100%; height: 1px;">
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;"><big><big><span style="font-weight:
+        bold;">Grading</span></big></big><br>
+          <br>
+          Students will be evaluated using the following criteria:<br>
+          <br>
+          Paper Presentations = 15%<br>
           Assignments and Development Projects = 35%<br>
           Exams = 50%<br>
           <br>
@@ -302,4 +305,4 @@ r Presentations = 15%<br>
           <br>
           If you need help managing stress anxiety, relationships, etc., please
           visit <a href="https://www.uhs.uga.edu/bewelluga/bewelluga">BeWellUGA</a> for a list of FREE workshops, classes, mentoring,
-          and health coaching le
+          and health coaching led 
