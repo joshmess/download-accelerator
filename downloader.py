@@ -21,7 +21,8 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     sock.connect((host, port))
     byterange = str(start) + '-' + str(end)
     request = 'GET %s HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (path, host, byterange)
-
+   
+    print('Get Request: ')
     print(request)
 
     sock.send(request.encode())
@@ -66,8 +67,12 @@ def main():
     csock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     csock.connect((host, 80))
     request = 'HEAD %s HTTP/1.1\r\nHost:%s\r\n\r\n' % (path, host)
+    print('HEAD Request: ')
+    print(request)
     csock.send(request.encode())
     response = csock.recv(4096)
+    print('HEAD Response: ')
+    print(response)
     csock.close()
 
     print(response.decode())
