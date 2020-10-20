@@ -14,8 +14,9 @@ import socket
 
 port = 80
 
-
+# Thread routine that downlaods a part of the requsted object
 def download_chunk(path, host, start, end, part, fname, output_dir):
+    # create TCP socket
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.connect((host, port))
     byterange = str(start) + '-' + str(end)
@@ -26,6 +27,7 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     sock.send(request.encode())
     response = sock.recv(4096)
 
+    # write file chunk to directory
     filename = fname + '.chunk_%d' % part
     filepath = os.path.join(output_dir, filename)
     with open(filepath, 'wb') as f:
