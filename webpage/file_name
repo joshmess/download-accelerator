@@ -55,7 +55,7 @@
       </tr>
       <tr>
         <td style="vertical-align: top; font-weight: bold; background-color:
-         white; ">Location</td>
+        white; ">Location</td>
         <td style="vertical-align: top; background-color: white; ">All classes
         will be in Boyd GSRC 222<br>
         </td>
@@ -90,7 +90,7 @@
 
   <br>
 
-  <table style="text-aliggn: left; height: 1000px;" border="0" cellpadding="2"
+  <table style="text-align: left; height: 1000px;" border="0" cellpadding="2"
   cellspacing="2">
 
     <tbody>
@@ -118,7 +118,7 @@
           interconnected computer networks, and analyze how devices connect to
           the Internet to exchange information. We will first analyze some of
           the most important application protocols such as HTTP, SMTP, DNS,
-          etc., that enable  Internet nodes to request and offer services (e.g.,
+          etc., that enable Internet nodes to request and offer services (e.g.,
           access web pages, send emails, etc.). We will then move down the OSI
           model to consider the transport and network layers, with focus on
           understanding the UDP and TCP protocols, flow and congestion control,
@@ -142,7 +142,7 @@
             </li>
 
             <li><span style="font-weight: bold;">Recommended Readings</span>:
-             <span style="font-style: italic;">TCP/IP Illustrated, Volume 1: The
+            <span style="font-style: italic;">TCP/IP Illustrated, Volume 1: The
             Protocols</span><br>
               W. Richard Stevens<br>
               Addition Wesley<br>
@@ -181,7 +181,7 @@
           <br>
           Students will be evaluated using the following criteria:<br>
           <br>
-          PPaper Presentations = 15%<br>
+          Paper Presentations = 15%<br>
           Assignments and Development Projects = 35%<br>
           Exams = 50%<br>
           <br>
@@ -201,7 +201,7 @@
           focus on network programming in Linux using Python. Other assignments will focus on the analysis
           of network traffic traces. Each successfully completed assignment
           will be attributed <span style="font-style: italic;">X</span>
-          points, where <span style="font-style: itallic;">X</span> will vary
+          points, where <span style="font-style: italic;">X</span> will vary
           depending on assignment difficulty.<br>
           <br>
           <span style="font-weight: bold; font-style: italic;">IMPORTANT</span>:
@@ -227,7 +227,7 @@
           academic papers assigned for review.<br>
           <br>
 
-           <big><span style="font-weight: bold; color:maroon">Adjustments due to Covid-19</span></big><br>
+          <big><span style="font-weight: bold; color:maroon">Adjustments due to Covid-19</span></big><br>
   
             The course will be conducted mostly synchronously, with hybrid
             in-person and online streaming lectures (via Zoom). Asynchronous lectures may
@@ -252,7 +252,7 @@
           meet the standards described in &#8220;A Culture of Honesty&#8221;
           found at: <a
           href="http://www.uga.edu/honesty">www.uga.edu/honesty</a>. Lack of
-          knowledge of thee academic honesty policy is not a reasonable
+          knowledge of the academic honesty policy is not a reasonable
           explanation for a violation. Questions related to course assignments
           and the academic honesty policy should be directed to the
           instructor.<br>
@@ -281,7 +281,7 @@
       </tr>
       <tr>
         <td style="vertical-align: top;"><big><big><span style="font-weight:
-        bold;">Mental Health and Wellness Resouurces</span></big></big><br>
+        bold;">Mental Health and Wellness Resources</span></big></big><br>
           <br>If you or someone you know needs assistance, you are encouraged to
           contact Student Care and Outreach in the Division of Student Affairs
           at 706-542-7774 or visit <a href="https://sco.uga.edu">https://sco.uga.edu.</a> <br>

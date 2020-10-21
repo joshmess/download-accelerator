@@ -27,6 +27,7 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     print(request)
 
     sock.send(request.encode())
+    print('end-starts:',end-start)
     response = sock.recv(end - start)
     response = response.decode()
     index = response.index('\r\n\r\n')
@@ -115,7 +116,8 @@ def main():
             start = chunk_size * i
             part += 1
             if i != num_chunks - 1:
-                end = start + chunk_size
+                    end = start + chunk_size-1
+                
             else:
                 end = start + chunk_size + chunk_remainder
 
