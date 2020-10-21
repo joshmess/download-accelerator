@@ -1,4 +1,6 @@
-ort and network layers, with focus on
+ Internet nodes to request and offer services (e.g.,
+          access web pages, send emails, etc.). We will then move down the OSI
+          model to consider the transport and network layers, with focus on
           understanding the UDP and TCP protocols, flow and congestion control,
           and the IP and routing protocols. Next we will consider the link and
           physical layers. Finally, we will discuss topics related to Network
@@ -11,4 +13,13 @@ ort and network layers, with focus on
           <br>
           <span style="font-weight: bold;">Books</span>:<br>
           <ul>
-            <li><span style="font-weight: bold;"
+            <li><span style="font-weight: bold;">Textbook</span>: <span
+            style="font-style: italic;">Computer Networking: A Top-Down
+            Approach, 7/e</span><br>
+              James F. Kurose and Keith W. Ross<br>
+              Pearson<br>
+              <br>
+            </li>
+
+            <li><span style="font-weight: bold;">Recommended Readings</span>:
+     

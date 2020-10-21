@@ -24,23 +24,23 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     # Send request and receive result
     sock.send(request.encode())
     response = sock.recv(end - start)
-    response = response.decode()
+    
     # Isolate headers
-    index = response.index('\r\n\r\n')
+    index = response.index(b'\r\n\r\n')
     headers_only = response[0:index]
     body_only = response[index+4:]
-    headers_only_bytes = headers_only.encode()
-    size_of_headers = sys.getsizeof(headers_only_bytes)
+    
+    size_of_headers = sys.getsizeof(headers_only)
 
     # Account for headers
     new_response = sock.recv(size_of_headers)
-    new_response = new_response.decode()
+
     content_response = body_only+new_response
     # write file chunk to directory
     filename = fname + '.chunk_%d' % part
     filepath = os.path.join(output_dir, filename)
     with open(filepath, 'wb') as f:
-        f.write(content_response.encode())
+        f.write(content_response)
     print('Downloaded %s' % filepath)
 
 
@@ -104,11 +104,12 @@ def main():
             start = chunk_size * i
             part += 1
             if i != num_chunks - 1:
-                    end = start + chunk_size-1
+                    end = start + (chunk_size-1)
                 
             else:
                 end = start + chunk_size + chunk_remainder
 
+            print('Part: ',part,' Start:' , start,' End: ',end)
             # Start threads
             t = threading.Thread(target=download_chunk, args=(path, host, start, end, part, file_name, output_dir))
             t.setDaemon(True)

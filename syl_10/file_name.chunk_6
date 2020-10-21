@@ -1,4 +1,4 @@
-r Presentations = 15%<br>
+Paper Presentations = 15%<br>
           Assignments and Development Projects = 35%<br>
           Exams = 50%<br>
           <br>
@@ -18,10 +18,4 @@ r Presentations = 15%<br>
           focus on network programming in Linux using Python. Other assignments will focus on the analysis
           of network traffic traces. Each successfully completed assignment
           will be attributed <span style="font-style: italic;">X</span>
-          points, where <span style="font-style: italic;">X</span> will vary
-          depending on assignment difficulty.<br>
-          <br>
-          <span style="font-weight: bold; font-style: italic;">IMPORTANT</span>:
-          development projects may be evaluated using a binary criteria:
-          "program works correctly" = max points; "program does not work
-          according to 
+          points, where <span style="font-style: ita
