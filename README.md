@@ -9,6 +9,8 @@ A command line tool that, given a single URL, can download the web object pointe
 $ python3 downloader.py -n num_chunks -o output_dir -f file_name -u object_url
 ```
 
-### Questions:
-- Almost every URL yielding a 301 Moved Permanently Message
+### Outstanding Notes:
+- Downlaoder seems to work correctly on : http://cobweb.cs.uga.edu/~perdisci/CSCI6760-F20/  --> but NOT on http://cobweb.cs.uga.edu/~perdisci/CSCI6760-F20/test_files/generic_arch_steps375x250.png
+- Yielding different md5sums each time.
+- Even first link breaks at n=32 chunks
 
