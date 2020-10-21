@@ -14,6 +14,7 @@ import socket
 
 port = 80
 
+
 # Thread routine that downlaods a part of the requsted object
 def download_chunk(path, host, start, end, part, fname, output_dir):
     # create TCP socket
@@ -21,19 +22,32 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     sock.connect((host, port))
     byterange = str(start) + '-' + str(end)
     request = 'GET %s HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (path, host, byterange)
-   
+
     print('GET Request: ')
     print(request)
 
     sock.send(request.encode())
-    response = sock.recv(end-start)
-    #print('GET Response')
-    #print(response.decode())
+    response = sock.recv(end - start)
+    response = response.decode()
+    index = response.index('\r\n\r\n')
+    headers_only = response[0:index]
+    headers_only_bytes = headers_only.encode()
+    size_of_headers = sys.getsizeof(headers_only_bytes)
+
+    # Craft new GET request to account for Header bytes
+    new_byterange = str(start) + '-' + str(end+size_of_headers)
+    new_request = 'GET %s HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (path, host, new_byterange)
+    sock.send(new_request.encode())
+    new_response = sock.recv((end+size_of_headers) - start)
+    index = new_response.index('\r\n\r\n')
+    body_only = response[index+4:]
+    body_only = body_only.encode()
+
     # write file chunk to directory
     filename = fname + '.chunk_%d' % part
     filepath = os.path.join(output_dir, filename)
     with open(filepath, 'wb') as f:
-        f.write(response)
+        f.write(body_only)
     print('Downloaded %s' % filepath)
 
 
