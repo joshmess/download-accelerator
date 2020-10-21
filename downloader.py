@@ -14,7 +14,6 @@ import socket
 
 port = 80
 
-
 # Thread routine that downlaods a part of the requsted object
 def download_chunk(path, host, start, end, part, fname, output_dir):
     # create TCP socket
@@ -22,14 +21,11 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     sock.connect((host, port))
     byterange = str(start) + '-' + str(end)
     request = 'GET %s HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (path, host, byterange)
-
-    print('GET Request: ')
-    print(request)
-
+    # Send request and receive result
     sock.send(request.encode())
-    print('end-starts:',end-start)
     response = sock.recv(end - start)
     response = response.decode()
+    # Isolate headers
     index = response.index('\r\n\r\n')
     headers_only = response[0:index]
     body_only = response[index+4:]
@@ -39,13 +35,12 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     # Account for headers
     new_response = sock.recv(size_of_headers)
     new_response = new_response.decode()
-    
-    final_response = body_only+new_response
+    content_response = body_only+new_response
     # write file chunk to directory
     filename = fname + '.chunk_%d' % part
     filepath = os.path.join(output_dir, filename)
     with open(filepath, 'wb') as f:
-        f.write(final_response.encode())
+        f.write(content_response.encode())
     print('Downloaded %s' % filepath)
 
 
@@ -63,12 +58,10 @@ def main():
 
     # Parse the given args
     args = parser.parse_args()
-
     num_chunks = args.num_chunks
     output_dir = args.output_dir
     file_name = args.file_name
     url = args.object_url
-
     parse_resp = urllib.parse.urlparse(url)
     host = parse_resp[1]
     path = parse_resp[2]
@@ -80,12 +73,8 @@ def main():
     csock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     csock.connect((host, 80))
     request = 'HEAD %s HTTP/1.1\r\nHost:%s\r\n\r\n' % (path, host)
-    print('HEAD Request: ')
-    print(request)
     csock.send(request.encode())
     response = csock.recv(4096)
-    print('HEAD Response: ')
-    print(response.decode())
     csock.close()
     response = response.decode()
 
@@ -103,16 +92,15 @@ def main():
     else:
         index_of_cl = response.index('Content-Length')
         content_length = int(response[response.index('Content-Length') + 16:response.index('\n', index_of_cl)])
-
-        print('content-length: ', content_length)
         # compute chunk size and remainder of last chunk downloaded
         chunk_size = math.floor(content_length / num_chunks)
         chunk_remainder = content_length % num_chunks
         # if there is a remainder, we have n+1 chunks total
 
         part = 0
-        # create a parallel threads for each chunk download
+        # create n parallel threads for each chunk download
         for i in range(num_chunks):
+            #compute start, part, end
             start = chunk_size * i
             part += 1
             if i != num_chunks - 1:
@@ -121,7 +109,7 @@ def main():
             else:
                 end = start + chunk_size + chunk_remainder
 
-            print('Part ', part, ' Start is: ', start, ' end is ', end)
+            # Start threads
             t = threading.Thread(target=download_chunk, args=(path, host, start, end, part, file_name, output_dir))
             t.setDaemon(True)
             t.start()
@@ -137,7 +125,6 @@ def main():
                 tmp_filename = file_name + '.chunk_%s' % str(i + 1)
                 tmp_path = os.path.join(output_dir, tmp_filename)
                 shutil.copyfileobj(open(tmp_path, 'rb'), f)
-                print('Copied ', tmp_path)
 
         print('Joining complete. File saved in %s' % filepath)
         newfile = open(filepath, 'rb')
