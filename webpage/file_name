@@ -1,16 +1,3 @@
-HTTP/1.1 206 Partial Content
-Date: Tue, 20 Oct 2020 21:46:23 GMT
-Server: Apache/2.2.15 (Red Hat)
-Strict-Transport-Security: max-age=63072000; includeSubdomains
-X-Content-Type-Options: nosniff
-Last-Modified: Thu, 20 Aug 2020 13:37:01 GMT
-ETag: "2b62632-3460-5ad4f370fe52b"
-Accept-Ranges: bytes
-Content-Length: 6705
-Content-Range: bytes 0-6704/13408
-Connection: close
-Content-Type: text/html; charset=UTF-8
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -68,7 +55,7 @@ Content-Type: text/html; charset=UTF-8
       </tr>
       <tr>
         <td style="vertical-align: top; font-weight: bold; background-color:
-        white; ">Location</td>
+         white; ">Location</td>
         <td style="vertical-align: top; background-color: white; ">All classes
         will be in Boyd GSRC 222<br>
         </td>
@@ -103,7 +90,7 @@ Content-Type: text/html; charset=UTF-8
 
   <br>
 
-  <table style="text-align: left; height: 1000px;" border="0" cellpadding="2"
+  <table style="text-aliggn: left; height: 1000px;" border="0" cellpadding="2"
   cellspacing="2">
 
     <tbody>
@@ -131,7 +118,7 @@ Content-Type: text/html; charset=UTF-8
           interconnected computer networks, and analyze how devices connect to
           the Internet to exchange information. We will first analyze some of
           the most important application protocols such as HTTP, SMTP, DNS,
-          etc., that enable Internet nodes to request and offer services (e.g.,
+          etc., that enable  Internet nodes to request and offer services (e.g.,
           access web pages, send emails, etc.). We will then move down the OSI
           model to consider the transport and network layers, with focus on
           understanding the UDP and TCP protocols, flow and congestion control,
@@ -155,7 +142,7 @@ Content-Type: text/html; charset=UTF-8
             </li>
 
             <li><span style="font-weight: bold;">Recommended Readings</span>:
-            <span style="font-style: italic;">TCP/IP Illustrated, Volume 1: The
+             <span style="font-style: italic;">TCP/IP Illustrated, Volume 1: The
             Protocols</span><br>
               W. Richard Stevens<br>
               Addition Wesley<br>
@@ -178,20 +165,23 @@ Content-Type: text/html; charset=UTF-8
               Available online at: <a
               href="http://www.tcpipguide.com/free/index.htm">http://www.tcpipguide.com/free/index.htm<br>
               </a></li>
-  HTTP/1.1 206 Partial Content
-Date: Tue, 20 Oct 2020 21:46:23 GMT
-Server: Apache/2.2.15 (Red Hat)
-Strict-Transport-Security: max-age=63072000; includeSubdomains
-X-Content-Type-Options: nosniff
-Last-Modified: Thu, 20 Aug 2020 13:37:01 GMT
-ETag: "2b62632-3460-5ad4f370fe52b"
-Accept-Ranges: bytes
-Content-Length: 6704
-Content-Range: bytes 6704-13407/13408
-Connection: close
-Content-Type: text/html; charset=UTF-8
+          </ul>
 
-r Presentations = 15%<br>
+
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <hr style="width: 100%; height: 1px;">
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;"><big><big><span style="font-weight:
+        bold;">Grading</span></big></big><br>
+          <br>
+          Students will be evaluated using the following criteria:<br>
+          <br>
+          PPaper Presentations = 15%<br>
           Assignments and Development Projects = 35%<br>
           Exams = 50%<br>
           <br>
@@ -211,7 +201,7 @@ r Presentations = 15%<br>
           focus on network programming in Linux using Python. Other assignments will focus on the analysis
           of network traffic traces. Each successfully completed assignment
           will be attributed <span style="font-style: italic;">X</span>
-          points, where <span style="font-style: italic;">X</span> will vary
+          points, where <span style="font-style: itallic;">X</span> will vary
           depending on assignment difficulty.<br>
           <br>
           <span style="font-weight: bold; font-style: italic;">IMPORTANT</span>:
@@ -237,7 +227,7 @@ r Presentations = 15%<br>
           academic papers assigned for review.<br>
           <br>
 
-          <big><span style="font-weight: bold; color:maroon">Adjustments due to Covid-19</span></big><br>
+           <big><span style="font-weight: bold; color:maroon">Adjustments due to Covid-19</span></big><br>
   
             The course will be conducted mostly synchronously, with hybrid
             in-person and online streaming lectures (via Zoom). Asynchronous lectures may
@@ -262,7 +252,7 @@ r Presentations = 15%<br>
           meet the standards described in &#8220;A Culture of Honesty&#8221;
           found at: <a
           href="http://www.uga.edu/honesty">www.uga.edu/honesty</a>. Lack of
-          knowledge of the academic honesty policy is not a reasonable
+          knowledge of thee academic honesty policy is not a reasonable
           explanation for a violation. Questions related to course assignments
           and the academic honesty policy should be directed to the
           instructor.<br>
@@ -291,7 +281,7 @@ r Presentations = 15%<br>
       </tr>
       <tr>
         <td style="vertical-align: top;"><big><big><span style="font-weight:
-        bold;">Mental Health and Wellness Resources</span></big></big><br>
+        bold;">Mental Health and Wellness Resouurces</span></big></big><br>
           <br>If you or someone you know needs assistance, you are encouraged to
           contact Student Care and Outreach in the Division of Student Affairs
           at 706-542-7774 or visit <a href="https://sco.uga.edu">https://sco.uga.edu.</a> <br>
@@ -302,4 +292,31 @@ r Presentations = 15%<br>
           <br>
           If you need help managing stress anxiety, relationships, etc., please
           visit <a href="https://www.uhs.uga.edu/bewelluga/bewelluga">BeWellUGA</a> for a list of FREE workshops, classes, mentoring,
-          and health coaching le
+          and health coaching led by licensed clinicians and health educators in
+          the University Health Center. <br>
+          Additional resources can be accessed through the UGA App. <br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <br>
+
+  <br>
+
+  <br>
+
+  <big><big><span style="font-weight: bold;"></span></big></big><br>
+
+  <br>
+
+  <big><big><span style="font-weight: bold;"></span></big></big><br>
+
+  <br>
+
+
+</body>
+
+</html>
