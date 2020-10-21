@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Syllabus</title>
+
+  <style type="text/css">
+    body {
+      background-color: white;
+      max-width: 800px;
+      text-align: center;
+      margin: auto;
+      color: black;
+    }
+
+    td {
+      text-align: justify;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body text="black">
+  <h1>CSCI 6760 - Computer Networks</h1>
+  <h2>Fall 2020</h2>
+
+
+  <br>
+
+  <table style="text-align: left; height: 164px; background-color: silver;
+  margin: auto;" border="0" cellpadding="1" cellspacing="1">
+
+    <tbody>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; backgro

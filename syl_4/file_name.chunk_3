@@ -1,0 +1,60 @@
+r Presentations = 15%<br>
+          Assignments and Development Projects = 35%<br>
+          Exams = 50%<br>
+          <br>
+          <big><span style="font-weight: bold;">Paper Presentations</span></big><br>
+          Students will be required to read one or more academic papers, RFCs,
+          and other network protocol documentation, as assigned by the
+          instructor, and present the topic to class. <br>
+          <span style="font-weight: bold; font-style: italic;">NOTE</span>: some
+          of the topics discussed in the assigned papers and RFCs will be part
+          of the midterm and final exams.<br>
+          <br>
+          <big style="font-weight: bold;">Assignments and Development
+          Projects</big><br>Throughout the course, students will be required to
+          complete a number of development projects. Some development projects
+          must be conducted individually, while others may be conducted in pairs
+          (the instructor will indicate which ones in class). The projects will
+          focus on network programming in Linux using Python. Other assignments will focus on the analysis
+          of network traffic traces. Each successfully completed assignment
+          will be attributed <span style="font-style: italic;">X</span>
+          points, where <span style="font-style: italic;">X</span> will vary
+          depending on assignment difficulty.<br>
+          <br>
+          <span style="font-weight: bold; font-style: italic;">IMPORTANT</span>:
+          development projects may be evaluated using a binary criteria:
+          "program works correctly" = max points; "program does not work
+          according to specifications" = 0 points. Possible exceptions to this
+          rule will be announced during class.<br>
+          <br>
+          <span style="font-weight: bold; font-style: italic;">LATENESS
+          POLICY</span>: Students are allowed at most one late submission
+          throughout the semester, and the late submission must be received no
+          more than 3 days past the deadline. If this threshold is exceeded, all
+          late assignments will be penalized 100% (i.e., 0 points).<br>
+          <br>
+
+          <big><span style="font-weight: bold;">Midterm and Final
+          Exams</span></big><br>
+
+          The midterm exam will include topics covered up to the exam date. The
+          final exam may include all the topics studied during the entire
+          course, with more emphasis on topics covered during the second half of
+          the term. Both the midterm and final exams may include topics from the
+          academic papers assigned for review.<br>
+          <br>
+
+          <big><span style="font-weight: bold; color:maroon">Adjustments due to Covid-19</span></big><br>
+  
+            The course will be conducted mostly synchronously, with hybrid
+            in-person and online streaming lectures (via Zoom). Asynchronous lectures may
+            also be used if/when necessary. <br>
+            Projects and other assignments will be submitted via eLC.
+            Exams will be conducted exclusively online. More information related
+            to the technical details of how exams are to be conducted will be
+            provided during the course.<br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+  
