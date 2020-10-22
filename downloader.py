@@ -21,6 +21,7 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     sock.connect((host, port))
     byterange = str(start) + '-' + str(end)
     request = 'GET %s HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (path, host, byterange)
+    print('GET Request: ',request)
     # Send request and receive result
     sock.send(request.encode())
     response = sock.recv(end - start)

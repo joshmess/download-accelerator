@@ -1,0 +1,36 @@
+        Security, such as spoofing, poisoning, Firewalls, etc.&nbsp; <br>
+          <br> 
+          <span style="font-weight: bold;">Prerequisite Knowledge</span>: The class
+          projects will require a good knowledge of the Python programming language. Furthermore, most
+          projects will be based on code written mainly for Linux systems,
+          therefore good familiarity with Linux is also required.<br>
+          <br>
+          <span style="font-weight: bold;">Books</span>:<br>
+          <ul>
+            <li><span style="font-weight: bold;">Textbook</span>: <span
+            style="font-style: italic;">Computer Networking: A Top-Down
+            Approach, 7/e</span><br>
+              James F. Kurose and Keith W. Ross<br>
+              Pearson<br>
+              <br>
+            </li>
+
+            <li><span style="font-weight: bold;">Recommended Readings</span>:
+            <span style="font-style: italic;">TCP/IP Illustrated, Volume 1: The
+            Protocols</span><br>
+              W. Richard Stevens<br>
+              Addition Wesley<br>
+              <br>
+            </li>
+            <li><span style="font-weight: bold;">Recommended Readings</span>:
+            <span style="font-style: italic;">Network Security: Private
+            Communication in a Public World, 2/e</span><br>
+
+              Charile Kaufman, Radia Perlman, Mike Speciner<br>
+              Prentice Hall<br>
+              <br>
+            </li>
+
+
+
+            <li><span style="font
