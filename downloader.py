@@ -15,7 +15,6 @@ import re
 
 port = 80
 
-
 # Thread routine that downlaods a part of the requsted object
 def download_chunk(path, host, start, end, part, fname, output_dir):
     # create TCP socket
@@ -23,24 +22,23 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     sock.connect((host, port))
     byterange = str(start) + '-' + str(end)
     request = 'GET %s HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (path, host, byterange)
-    print('GET Request: ', request)
-    # Send request and receive result
+    # Send request bytes to server via socket
     sock.sendall(request.encode())
+    # Loop until entire reply has been read
     res = b''
     data = sock.recv(1024)
     while data:
         res += data
         data = sock.recv(1024)
 
-    # isolate content
+    # Isolate content/remove reply headers
     content = re.findall(b'\r\n\r\n(.*)', res, re.S)
 
-    # write file chunk to directory
+    # Write file chunk to directory
     filename = fname + '.chunk_%d' % part
     filepath = os.path.join(output_dir, filename)
     with open(filepath, 'wb') as f:
         f.write(content[0])
-    print('Downloaded %s' % filepath)
 
 
 def main():
@@ -65,7 +63,7 @@ def main():
     host = parse_resp[1]
     path = parse_resp[2]
 
-    # create output directory
+    # Create output directory
     os.mkdir(output_dir)
 
     # TCP Connection for HEAD request --> Determine size
@@ -77,7 +75,7 @@ def main():
     csock.close()
     response = response.decode()
 
-    # check if accepts ranges
+    # Check if accepts ranges
     try:
         response.index('Accept-Ranges: bytes')
         accepts_ranges = True
@@ -91,12 +89,12 @@ def main():
     else:
         index_of_cl = response.index('Content-Length')
         content_length = int(response[response.index('Content-Length') + 16:response.index('\n', index_of_cl)])
-        # compute chunk size and remainder of last chunk downloaded
+        # Compute chunk size and remainder of last chunk downloaded
         chunk_size = math.floor(content_length / num_chunks)
         chunk_remainder = content_length % num_chunks
-
         part = 0
-        # create n parallel threads for each chunk download
+        print('Downloading chunks...')
+        # Create n parallel threads for each chunk download
         for i in range(num_chunks):
             # compute start, part, end
             start = chunk_size * i
@@ -107,7 +105,6 @@ def main():
             else:
                 end = start + chunk_size + chunk_remainder
 
-            print('Part: ', part, ' Start:', start, ' End: ', end)
             # Start threads
             t = threading.Thread(target=download_chunk, args=(path, host, start, end, part, file_name, output_dir))
             t.setDaemon(True)
