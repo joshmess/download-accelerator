@@ -40,7 +40,7 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     with open(filepath, 'wb') as f:
         f.write(content[0])
 
-
+# Main method
 def main():
     # Set up argument parsing automation
     prog = 'python3 downloader.py'

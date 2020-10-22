@@ -1,9 +1,0 @@
-: white;
-      max-width: 800px;
-      text-align: center;
-      margin: auto;
-      color: black;
-    }
-
-    td {
-      text-align: j

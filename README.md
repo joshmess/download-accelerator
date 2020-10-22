@@ -1,7 +1,7 @@
 # download-accelerator
 Computer Networks
 
-A command line tool that, given a single URL, can download the web object pointed by the URL by using multiple parallel TCP connections and HTTP Range requests.
+A command line tool that, given a single URL, can download the web object pointed by the URL by using multiple parallel TCP connections and HTTP Range requests. Downloader uses threads to download chunks in parallel.
 
 
 ### Test the downloader:
