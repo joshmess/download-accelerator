@@ -23,7 +23,7 @@ def download_chunk(path, host, start, end, part, fname, output_dir):
     request = 'GET %s HTTP/1.1\r\nHost: %s\r\nRange: bytes=%s\r\n\r\n' % (path, host, byterange)
     print('GET Request: ',request)
     # Send request and receive result
-    sock.send(request.encode())
+    sock.sendall(request.encode())
     response = sock.recv(end - start)
     
     # Isolate headers
@@ -74,7 +74,7 @@ def main():
     csock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     csock.connect((host, 80))
     request = 'HEAD %s HTTP/1.1\r\nHost:%s\r\n\r\n' % (path, host)
-    csock.send(request.encode())
+    csock.sendall(request.encode())
     response = csock.recv(4096)
     csock.close()
     response = response.decode()
@@ -96,7 +96,6 @@ def main():
         # compute chunk size and remainder of last chunk downloaded
         chunk_size = math.floor(content_length / num_chunks)
         chunk_remainder = content_length % num_chunks
-        # if there is a remainder, we have n+1 chunks total
 
         part = 0
         # create n parallel threads for each chunk download
